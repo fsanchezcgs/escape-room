@@ -9,7 +9,7 @@ submit.addEventListener("click",(e) => {
   console.log(pwd);
   if(user != null){
     if(user.pwd == pwd) {
-      sessionStorage.setItem(user.email, JSON.stringify(user));
+      sessionStorage.setItem("userLogged", JSON.stringify(user));
     } else {
       console.log("not the same pwd");
     }

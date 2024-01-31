@@ -18,6 +18,15 @@ footer {
   margin-top: auto;
 }
 
+.linksBox {
+  display: flex;
+  align-items: center;
+}
+
+#logout {
+  display: none;
+}
+
 .form-control {
   background-color: transparent;
   border: 0;
