@@ -8,14 +8,21 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-image: url(./../img/grayBricks.jpg);
 }
 
 header {
   font-size: 18px;
+  background-color: rgb(240, 242, 255);
 }
 
 footer {
   margin-top: auto;
+  background-color: rgb(198, 199, 207);
+}
+
+form {
+  background-image: url(./../img/redBricks.png);
 }
 
 .linksBox {
