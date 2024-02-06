@@ -21,8 +21,16 @@ footer {
   background-color: rgb(198, 199, 207);
 }
 
+.play {
+  /* margin-top: 20%; */
+}
+
 form {
-  background-image: url(./../img/redBricks.png);
+  background-color: rgb(234, 206, 206);
+}
+
+form a {
+  color: black;
 }
 
 .linksBox {
@@ -35,18 +43,19 @@ form {
 }
 
 .form-control {
-  background-color: transparent;
-  border: 0;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-size: 20px;
 }
 
 .form-control small {
-  color: red;
   display: none;
+  color: red;
 }
 
 .form-control.error small {
