@@ -97,8 +97,40 @@ form a {
   cursor: pointer;
 }
 
-.popupContent {
+.popup {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  background-color: rgb(62, 77, 165);
+}
+
+#codeScreen {
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: rgb(122, 207, 128);
+}
+
+#numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   font-size: 20px;
+  width: 150px;
+  margin-top: 25px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  background-color: #505457;
+  color: white;
+  cursor: pointer;
 }
