@@ -1,5 +1,5 @@
 let code = Math.floor(Math.random() * (9999 - 1) + 1);
-let screen = "";
+let screenCode = "";
 if (code < 10) {
   code = "000" + code;
 } else if (code < 100) {
@@ -11,11 +11,13 @@ console.log(code);
 
 let numbers = document.getElementById("numbers");
 numbers.addEventListener("click", (e) => {
-  if (screen.length <4) {
+  if (screenCode.length < 4) {
     if (e.target.classList.contains("number")) {
-      screen = e.target.innerHTML + screen;
-      console.log(screen);
-      console.log(screen.length);
+      screenCode = screenCode + e.target.innerHTML;
+      let screen = document.getElementById("codeScreen");
+      screen.innerText = screenCode;
+      console.log(screenCode);
+      console.log(screenCode.length);
     }
   }
 });

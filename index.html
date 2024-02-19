@@ -33,15 +33,6 @@
             id="navbarNavDropdown"
           >
             <ul class="navbar-nav d-flex align-items-center">
-              <li class="nav-item">
-                <a
-                  class="nav-link active rounded-2"
-                  aria-current="page"
-                  href="./index.html"
-                >
-                  Home
-                </a>
-              </li>
               <li class="nav-item" id="login">
                 <a class="nav-link" href="./html/login.html">Log in</a>
               </li>
@@ -49,16 +40,31 @@
                 <a class="nav-link" href="./html/register.html">Register</a>
               </li>
               <li class="nav-item" id="user_name"></li>
-              <li class="nav-item" id="logout"></li>
+              <li class="nav-item" id="logout">
+                <button class="nav-link rounded-2" onclick="logout()">
+                  Log Out
+                </button>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main class="d-flex justify-content-center align-items-center">
-      <a href="./html/games/firstEscapeRoom.html" class="play">
+    <main
+      class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    >
+      <!-- <button id="play" class="p-2 rounded-3">
         <h1>JUGAR</h1>
-      </a>
+      </button> -->
+      <h1 class="mb-4">Eligue una Opcion</h1>
+      <div>
+        <button id="new" class="p-2 rounded-3 mx-3">
+          <h2>NUEVA PARTIDA</h2>
+        </button>
+        <button id="continue" class="p-2 rounded-3">
+          <h2>CONTINUAR</h2>
+        </button>
+      </div>
     </main>
     <footer>
       <section
@@ -80,5 +86,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="javascript/script.js"></script>
+    <script src="javascript/play.js"></script>
   </body>
 </html>

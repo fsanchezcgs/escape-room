@@ -33,20 +33,16 @@
             id="navbarNavDropdown"
           >
             <ul class="navbar-nav d-flex align-items-center">
-              <li class="nav-item">
-                <a
-                  class="nav-link active rounded-2"
-                  aria-current="page"
-                  href="./../index.html"
-                  >Home</a
-                >
-              </li>
               <li class="nav-item" id="register">
                 <a class="nav-link" href="./register.html">Register</a>
               </li>
               <li class="nav-item" id="login"></li>
               <li class="nav-item" id="user_name"></li>
-              <li class="nav-item" id="logout"></li>
+              <li class="nav-item" id="logout">
+                <button class="nav-link rounded-2" onclick="logout()">
+                  Log Out
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -56,25 +52,22 @@
       class="container-fluid d-flex justify-content-center align-items-center text-center"
     >
       <form action="" class="p-3 rounded-4 my-4">
-        <h2 class="d-block my-1">Log In</h2>
         <div class="form-control">
           <label for="userEmail" class="d-block">Email</label>
-          <input type="text" id="userEmail" class="my-3" />
+          <input type="text" id="userEmail" class="my-2 rounded-2" />
           <small>Message error</small>
         </div>
         <div class="form-control">
           <label for="userPwd" class="d-block">Password</label>
-          <input type="password" id="userPwd" class="my-3" />
+          <input type="password" id="userPwd" class="my-2 rounded-2" />
           <small>Message error</small>
         </div>
-        <a href="./register.html" class="d-block mt-2 mb-3"
-          >Not around? Register</a
-        >
+        <a href="./register.html" class="d-block">Not around? Register</a>
         <input
           type="submit"
           value="Continue"
           id="btn-submit"
-          class="btn btn-primary my-3 w-100"
+          class="btn btn-primary mt-3 w-100"
         />
       </form>
     </main>
