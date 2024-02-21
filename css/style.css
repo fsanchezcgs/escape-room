@@ -1,3 +1,4 @@
+/* All pages */
 * {
   margin: 0;
   padding: 0;
@@ -26,13 +27,23 @@ a {
   text-decoration: none;
 }
 
+#logout {
+  display: none;
+}
+
 main {
   height: 70vh;
 }
 
-#play {
+/* index.html */
+
+#play,
+#new,
+#continue {
   background-color: rgb(206, 230, 234);
 }
+
+/* Register and Login */
 
 form {
   background-color: rgb(234, 206, 206);
@@ -40,15 +51,6 @@ form {
 
 form a {
   color: black;
-}
-
-.linksBox {
-  display: flex;
-  align-items: center;
-}
-
-#logout {
-  display: none;
 }
 
 .form-control {
@@ -79,6 +81,24 @@ form a {
   display: block;
 }
 
+/* First Escape Room */
+
+.fistStage {
+  background-image: url(./../img/firstStage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#codeClick {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 69%;
+  left: 54%;
+  background-color: #505457;
+  border: 1px solid #2ecc71;
+}
+
 .divPopup {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -86,7 +106,7 @@ form a {
   left: 0;
   width: 100%;
   height: 100%;
-  /* display: none; */
+  display: none;
 }
 
 .popup {
@@ -128,6 +148,10 @@ form a {
   height: 40px;
   margin-top: 10px;
   background-color: rgb(122, 207, 128);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
 
 #numbers {
@@ -150,4 +174,12 @@ form a {
   background-color: #505457;
   color: white;
   cursor: pointer;
+}
+
+.correct {
+  background-color: #2ecc71;
+}
+
+.delete {
+  background-color: #e74c3c;
 }

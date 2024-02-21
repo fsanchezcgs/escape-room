@@ -9,7 +9,6 @@ submit.addEventListener("click", (e) => {
   let user = {
     name: name.value,
     email: email.value,
-    admin: false,
     pwd: pwd.value,
     games: {
       game1: {},
