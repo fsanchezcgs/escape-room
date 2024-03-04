@@ -11,8 +11,8 @@ submit.addEventListener("click", (e) => {
     email: email.value,
     pwd: pwd.value,
     games: {
-      game1: {},
-      game2: {},
+      game1: null,
+      game2: null,
     },
   };
   if (
@@ -21,7 +21,7 @@ submit.addEventListener("click", (e) => {
     checkLength(pwd, 8, 25) &&
     checkPassword(pwd, pwd2)
   ) {
-    localStorage.setItem(email, JSON.stringify(user));
+    localStorage.setItem(email.value, JSON.stringify(user));
     sessionStorage.setItem("userLogged", JSON.stringify(user));
     window.location.assign("./../index.html");
   }

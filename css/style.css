@@ -89,12 +89,22 @@ form a {
   background-size: cover;
 }
 
+.secondStage {
+  background-image: url(./../img/secondStage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home {
+  background-color: #505457;
+}
+
 #codeClick {
-  width: 30px;
-  height: 40px;
   position: absolute;
-  top: 69%;
-  left: 54%;
+  top: 310px;
+  left: 1080px;
+  width: 60px;
+  height: 130px;
   background-color: #505457;
   border: 1px solid #2ecc71;
 }
@@ -107,6 +117,7 @@ form a {
   width: 100%;
   height: 100%;
   display: none;
+  z-index: 1;
 }
 
 .popup {
@@ -176,10 +187,61 @@ form a {
   cursor: pointer;
 }
 
-.correct {
+.confirm {
   background-color: #2ecc71;
 }
 
 .delete {
   background-color: #e74c3c;
+}
+
+#game {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 490px;
+  margin-top: 100px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+  background-color: rgb(105, 105, 102);
+  z-index: 1;
+}
+
+#message {
+  color: white;
+}
+
+.card {
+  width: 90px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 10px;
+  background-image: url(./../img/switchOff.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.card p {
+  display: none;
+  color: rgb(255, 255, 0);
+  font-size: 28px;
+}
+
+.checked {
+  cursor: default;
+  background-image: url(./../img/switchOn.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.checked p {
+  display: block;
 }
