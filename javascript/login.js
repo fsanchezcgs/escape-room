@@ -11,10 +11,10 @@ submit.addEventListener("click", (e) => {
         sessionStorage.setItem("userLogged", JSON.stringify(user));
         window.location.assign("./../index.html");
       } else {
-        console.log("not the same pwd");
+        showIncorrect(pwd, ` la contrasenya és incorrecte`);
       }
     } else {
-      showIncorrect(email, ` the user dosen't exist`);
+      showIncorrect(email, ` l'usuari no existeix`);
     }
   } else {
     console.log("object");
@@ -26,7 +26,7 @@ function isRequired(inputArray) {
 
   inputArray.forEach((input) => {
     if (input.value.trim() === "") {
-      showIncorrect(input, ` is required`);
+      showIncorrect(input, ` es necessari`);
     } else {
       showCorrect(input);
       cont++;
@@ -48,7 +48,7 @@ function isEmailValid(input) {
     showCorrect(input);
     return true;
   } else {
-    let missatge = ` is not in the correct format`;
+    let missatge = ` no té el format correcte`;
     showIncorrect(input, missatge);
     return false;
   }

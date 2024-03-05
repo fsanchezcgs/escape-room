@@ -245,3 +245,17 @@ form a {
 .checked p {
   display: block;
 }
+
+.note {
+  display: flex;
+  justify-content: center;
+}
+
+.note > div {
+  width: 500px;
+  padding: 10px;
+  background-image: url(./../img/note.png);
+}
+.win{
+  background-color: rgb(240, 242, 255);
+}

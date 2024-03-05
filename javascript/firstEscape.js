@@ -71,11 +71,24 @@ if (loggedUser != null) {
 
   function game2() {
     loggedUser.games.game1 = 2;
-    console.log(loggedUser);
     sessionStorage.setItem("userLogged", JSON.stringify(loggedUser));
     localStorage.setItem(loggedUser.email, JSON.stringify(loggedUser));
+
     let body = document.getElementsByTagName("body");
     let main = document.getElementsByTagName("main");
+
+    let code = Math.floor(Math.random() * (9999 - 1) + 1);
+    let screenCode = "";
+    if (code < 10) {
+      code = "000" + code;
+    } else if (code < 100) {
+      code = "00" + code;
+    } else if (code < 1000) {
+      code = "0" + code;
+    }
+
+    code = code.toString();
+    console.log(code);
 
     let structure = `<button id="codeClick"></button>
     <div class="divPopup">
@@ -97,6 +110,20 @@ if (loggedUser != null) {
     <div class="number delete"></div>
     </div>
     </div>
+    <div class="note">
+    <div class="rounded">
+    <h3>RECORDATORI</h3>
+    <p>Ha d'enviar a ${
+      code[0]
+    } empleats a què vagin a recollir un encàrrec de ${
+      code[1]
+    } taules, canvia l'encàrrec de ${
+      parseInt(code[2]) + 2
+    } cadires perquè en sobren 2, tot això abans del dia ${
+      code[3]
+    } del següent mes.</p>
+    </div>
+    </div>
     </div>`;
     main[0].innerHTML = structure;
 
@@ -113,18 +140,6 @@ if (loggedUser != null) {
 
     codeClick.addEventListener("click", () => {
       popup[0].style.display = "block";
-      let code = Math.floor(Math.random() * (9999 - 1) + 1);
-      let screenCode = "";
-      if (code < 10) {
-        code = "000" + code;
-      } else if (code < 100) {
-        code = "00" + code;
-      } else if (code < 1000) {
-        code = "0" + code;
-      }
-
-      code = code.toString();
-      console.log(code);
 
       let numbers = document.getElementById("numbers");
       numbers.addEventListener("click", (e) => {
@@ -135,9 +150,15 @@ if (loggedUser != null) {
             screenCode = deleteNum.join("");
             let screen = document.getElementById("codeScreen");
             screen.innerText = screenCode;
-          } else if (e.target.classList.contains("correct")) {
+          } else if (e.target.classList.contains("confirm")) {
             if (screenCode === code) {
-              console.log("WIN");
+              loggedUser.games.game1 = 3;
+              sessionStorage.setItem("userLogged", JSON.stringify(loggedUser));
+              localStorage.setItem(
+                loggedUser.email,
+                JSON.stringify(loggedUser)
+              );
+              window.location.assign("./../win.html");
             }
           } else if (screenCode.length < 4) {
             screenCode = screenCode + e.target.innerHTML;

@@ -32,7 +32,7 @@ function isRequired(inputArray) {
 
   inputArray.forEach((input) => {
     if (input.value.trim() === "") {
-      showIncorrect(input, ` is required`);
+      showIncorrect(input, ` es necessari`);
     } else {
       showCorrect(input);
       cont++;
@@ -67,7 +67,7 @@ function isEmailValid(input) {
     showCorrect(input);
     return true;
   } else {
-    let missatge = ` is not in the correct format`;
+    let missatge = ` no té el format correcte`;
     showIncorrect(input, missatge);
     return false;
   }
@@ -75,7 +75,7 @@ function isEmailValid(input) {
 
 function checkPassword(input1, input2) {
   if (input1.value != input2.value) {
-    let missatge = ` must be equal to Password`;
+    let missatge = ` les contrasenyas no son iguals`;
     showIncorrect(input2, missatge);
     return false;
   } else {
