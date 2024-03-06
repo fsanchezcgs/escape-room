@@ -2,17 +2,24 @@ const submit = document.getElementById("btn-submit");
 
 submit.addEventListener("click", (e) => {
   e.preventDefault();
+  // recoeix totes les dades del formulari
   let email = document.getElementById("userEmail");
   let pwd = document.getElementById("userPwd");
   let user = JSON.parse(localStorage.getItem(email.value));
+  // cridada de les funcions que comprovan el format de les dades
   if (isRequired([email, pwd]) && isEmailValid(email)) {
+    // comprova si sa trobat usuari
     if (user != null) {
+      // comprova si la contrasenya es correcta
       if (user.pwd == pwd.value) {
+        // inicia sesio al usuari, i redirigeix l'usuari a la pagina home
         sessionStorage.setItem("userLogged", JSON.stringify(user));
         window.location.assign("./../index.html");
+      // mensatge de la contrasenya no es correcta
       } else {
         showIncorrect(pwd, ` la contrasenya és incorrecte`);
       }
+      // mensatge de l'usuari no sa trobat
     } else {
       showIncorrect(email, ` l'usuari no existeix`);
     }
@@ -21,6 +28,7 @@ submit.addEventListener("click", (e) => {
   }
 });
 
+// funcions de comprovacio de format
 function isRequired(inputArray) {
   let cont = 0;
 

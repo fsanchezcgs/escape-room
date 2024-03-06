@@ -2,10 +2,12 @@ const submit = document.getElementById("btn-submit");
 
 submit.addEventListener("click", (e) => {
   e.preventDefault();
+  // recoeix totes les dades del formulari
   let name = document.getElementById("userName");
   let email = document.getElementById("userEmail");
   let pwd = document.getElementById("userPwd");
   let pwd2 = document.getElementById("userPwd2");
+  // crea lobjecte de l'usuari
   let user = {
     name: name.value,
     email: email.value,
@@ -15,18 +17,21 @@ submit.addEventListener("click", (e) => {
       game2: null,
     },
   };
+  // cridada de les funcions que comprovan el format de les dades
   if (
     isRequired([name, email, pwd, pwd2]) &&
     isEmailValid(email) &&
     checkLength(pwd, 8, 25) &&
     checkPassword(pwd, pwd2)
   ) {
+    // creacio de l'usuari, i login automatic
     localStorage.setItem(email.value, JSON.stringify(user));
     sessionStorage.setItem("userLogged", JSON.stringify(user));
     window.location.assign("./../index.html");
   }
 });
 
+// funcions de comprovacio de format
 function isRequired(inputArray) {
   let cont = 0;
 
